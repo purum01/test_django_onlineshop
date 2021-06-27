@@ -18,7 +18,6 @@ class Question(models.Model):
         return reverse("qna:detail", kwargs={"id": self.id})
     
 
-
 class Answer(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     content = models.TextField(verbose_name='답변')
