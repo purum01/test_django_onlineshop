@@ -115,7 +115,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
 
 
 SITE_ID = 1
-LOGIN_REDIRECT_URL = '/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 

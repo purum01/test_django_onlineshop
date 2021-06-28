@@ -3,13 +3,6 @@
 {% block content %}
 
 <h1>Log-in</h1>
-  {% if form.errors %}
-    <p>
-      사용자 이름과 비밀번호를 확인해 주세요
-    </p>
-  {% else %}
-    <p>로그인 해주세요</p>
-  {% endif %}
   <div class="login-form">
     <form action="{% url 'login' %}" method="post">
       {{ form.as_p }}
