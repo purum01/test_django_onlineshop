@@ -34,9 +34,9 @@
         <div class="cart">
             {% with total_items=cart|length %}
                 {% if cart|length > 0 %}
-                    Your cart:
+                    장바구니 : 
                     <a href="{% url 'cart:cart_detail' %}">
-                        {{ total_items }} 상품, {{ cart.get_total_price|intcomma}}원
+                        {{ total_items }}개 상품 / {{ cart.get_total_price|intcomma}}원 
                     </a>
                 {% else %}
                     Your cart is empty.
