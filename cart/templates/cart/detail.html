@@ -30,7 +30,7 @@
                 </td>
                 <td>{{ product.name }}</td>
                 <td>
-                    <form action="{% url "cart:cart_add" product.id %}" method="post">
+                    <form action="{% url 'cart:cart_add' product.id %}" method="post">
                         {{ item.override_quantity_form.quantity }}
                         {{ item.override_quantity_form.update }}
                         <input type="submit" value="수정">
@@ -38,7 +38,7 @@
                     </form>
                 </td>
                 <td>
-                    <form action="{% url "cart:cart_remove" product.id %}"" method="post">
+                    <form action="{% url 'cart:cart_remove' product.id %}"" method="post">
                         <input type="submit" value="삭제">
                         {% csrf_token %}
                     </form>

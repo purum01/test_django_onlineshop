@@ -35,7 +35,7 @@
             {% with total_items=cart|length %}
                 {% if cart|length > 0 %}
                     Your cart:
-                    <a href="{% url "cart:cart_detail" %}">
+                    <a href="{% url 'cart:cart_detail' %}">
                         {{ total_items }} 상품, {{ cart.get_total_price|intcomma}}원
                     </a>
                 {% else %}

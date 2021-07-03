@@ -6,6 +6,11 @@ from .forms import CartAddProductForm
 from coupons.forms import CouponApplyForm
 
 
+def cart_detail(request):
+    cart = Cart(request)
+    coupon_apply_form = CouponApplyForm()
+    return render(request, 'cart/detail.html',{'cart':cart,'coupon_apply_form':coupon_apply_form})   
+
 @require_POST
 def cart_add(request, product_id):
     cart = Cart(request)
@@ -17,11 +22,6 @@ def cart_add(request, product_id):
         cart.add(product=product, quantity=cd['quantity'], override_quantity=cd['update'])
 
     return redirect('cart:cart_detail')
-
-def cart_detail(request):
-    cart = Cart(request)
-    coupon_apply_form = CouponApplyForm()
-    return render(request, 'cart/detail.html',{'cart':cart,'coupon_apply_form':coupon_apply_form})
 
 def cart_remove(request,product_id):
     cart = Cart(request)
